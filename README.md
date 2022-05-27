@@ -1,7 +1,8 @@
 # Getting Started with the Backend Server 
 
-## Land into the backend directory 
+## Land into the backend directory and install all the dependencies
 ### `cd backend`
+### `npm install`
 
 ## Available Scripts 
 
@@ -16,8 +17,9 @@ Starts the server at localhost://5000
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Land into the frontend directory
+## Land into the frontend directory and install all the dependencies 
 ### `cd client`
+### `npm install`
 
 ## Available Scripts
 
