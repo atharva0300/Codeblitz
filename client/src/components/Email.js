@@ -46,10 +46,10 @@ function Email({displayEmail , toggleDisplayEmail}) {
                 <img src="https://img.icons8.com/color/48/undefined/close-window.png" className='close-btn mb-4' onClick={() => toggleDisplayEmail(!displayEmail)}/>
                  <label className='text-white text-2xl font-sans mb-8'>Get a DSA Question mailed to you everyday !</label>
                  <label className = "text-white self-center">Full Name : </label>
-                 <input type = "text" className = "self-center w-2/3 h-8" placeholder='Enter you full name here...' name  = "name" />
+                 <input type = "text" className = "self-center w-2/3 h-8" placeholder='Enter you full name here...' name  = "to_name" />
                 <br/>
                  <label className = "text-white self-center">Email id : </label>
-                 <input type = "email" className = "self-center w-2/3 h-8" placeholder='Enter you email here...' />
+                 <input type = "email" className = "self-center w-2/3 h-8" placeholder='Enter you email here...' name = "receiver_email" />
                  <br/>
                  <button type = "submit" className='w-36 h-16 text-xl rounded-3xl text-white bg-fuchsia-500 self-center'>Send Email</button>
              </form>
