@@ -4,18 +4,61 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 
+// importing components 
+import Header from './components/Header';
+import Editor from './components/Editor';
+import Output from './components/Output';
+import Language from './components/Language';
+import { useEffect } from 'react';
+import Email from './components/Email';
+
+
 function App() {
   
   const [code, setCode] = useState('');
   const [output , setOutput] = useState('');
+  const [language , setLanguage] = useState('cpp');
+  const [placeholder , setPlaceholder] = useState('');
+  const [outputPlaceholder , setOutputPlaceholder] = useState('cpp');
+  const [displayEmail , toggleDisplayEmail] = useState(false);
 
-  const handleSubmit = async () => {
+  useEffect(() => {
+     
+  function onSetPlaceholder(){
+    if(language=='cpp'){
+      const text = '   Type your C++ code here...';
+      setPlaceholder(text);
+    }else if(language=='py'){
+      const text = "   Type your Python code here...";
+      setPlaceholder(text);
+    }
+  }
+
+  function onSetOutputPlaceholder(){
+    if(language=='cpp'){
+      const text = '  C++ Output goes here';
+      setOutputPlaceholder(text);
+    }else if(language=='py'){
+      const text = '  Python Output goes here';
+      setOutputPlaceholder(text);
+    }
+  }
+
+  onSetPlaceholder();
+  onSetOutputPlaceholder();
+
+  } , [language])
+
+
+
+  const SubmitCode = async (code) => {
     console.log(code);
+    console.log(language);
 
     //sending the code 
     // makign a post request 
     const payLoad = {
-      language : 'cpp',
+      language : `${language}`,
       code,
     }
 
@@ -35,15 +78,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Online Code Compiler</h1>
-      <textarea rows = '20' cols = '75' value = {code} onChange = {(e) =>{setCode(e.target.value)} } placeholder = "Type you C++ code here">
-
-      </textarea>
-      <br/>
-      <button type = "submit" onClick={handleSubmit}>Submit</button>
-    
-      <br/>
-      <h2>{output}</h2>
+      <Header toggleDisplayEmail = {toggleDisplayEmail} displayEmail = {displayEmail} />
+      <Language setLanguage = {setLanguage} />
+      <div className='flex flex-row justify-around w-full h-full'> 
+            <Editor code  = {code} onSubmit = {SubmitCode} setCode = {setCode} placeholder = {placeholder} />
+            <Output output = {output} outputPlaceholder = {outputPlaceholder} />
+      </div>
+      <Email displayEmail = {displayEmail} />
     </div>
   );
 }

@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+.output{
+  width : 50%;
+  height : 1000px;
+}
+
+.editor{
+  width : 50%;
+  height : 1000px;
+}
+
+.language{
+   left : 40%;
+   top : 125px;
+}
+
+.email{
+  left : 50%;
+  top : 50%;
+  height : 500px;
+  width : 500px;
+  position : absolute;
+}

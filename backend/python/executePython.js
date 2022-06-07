@@ -7,15 +7,17 @@ const path = require('path');
 
 const outputPath = path.join(__dirname , "outputs");
 
+/*
 if(!fs.existsSync(outputPath)){
     // checking if the outpuPath exists or not 
     // if it does not exists then, we create a new directory 
 
     fs.mkdirSync(outputPath , {recursive : true})
 }
+*/
 
 
-const executeCPP = (filePath) => {
+const executePython = (filePath) => {
     // example command to compile and create an output file 
     // g++ e3a9eb17-0587-4f63-b510-1ac9aaf231e5 && ./a.out
 
@@ -36,7 +38,7 @@ const executeCPP = (filePath) => {
         console.log('outputpath : ' , outputPath);
         
         return new Promise((resolve , reject) => {
-            exec(`g++ codes/${jobID}.cpp -o outputs/${jobID} && ./outputs/${jobID}`, 
+            exec(`python3 python/codes/${jobID}.py`, 
             // g++ ${filePath} -o ${outPath} && cd ${outputPath} && ./${jobID}
             // g++ codes/${jobID} -o outputs/${jobID} && ./outputs/${jobID}
                 (error , stdout , stderr) => {
@@ -66,5 +68,5 @@ const executeCPP = (filePath) => {
 }
 
 module.exports = {
-    executeCPP
+    executePython
 };
