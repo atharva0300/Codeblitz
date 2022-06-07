@@ -1,5 +1,18 @@
 # Getting Started with the Backend Server 
 
+## Screenshots
+![Codeblitz-1](https://user-images.githubusercontent.com/76089814/172440714-9f8cf231-172f-4947-ab25-e6016fc2d024.png)
+
+
+![Codeblitz-2](https://user-images.githubusercontent.com/76089814/172440720-f388d1ea-2df7-4742-87e5-2549f01936c1.png)
+
+
+![Codeblitz-3](https://user-images.githubusercontent.com/76089814/172440748-2143db6a-4d18-4834-9317-53ae446fd7ab.png)
+
+![Codeblitz-4](https://user-images.githubusercontent.com/76089814/172440758-0c12d58d-c1fa-4eae-95a0-6ae6df7a52e2.png)
+
+
+
 ## Land into the backend directory and install all the dependencies
 ### `cd backend`
 ### `npm install`
