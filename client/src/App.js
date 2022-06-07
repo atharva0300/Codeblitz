@@ -63,7 +63,7 @@ function App() {
     }
 
     try{
-      const {data} = await axios.post('http://localhost:5000/run' , payLoad)
+      const {data} = await axios.post('https://Codeblitz.herokuapp.com/run' , payLoad)
       // extracting the data from the output object
 
       console.log(data);
