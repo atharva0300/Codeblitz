@@ -4,7 +4,7 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
 
-function Email({displayEmail}) {
+function Email({displayEmail , toggleDisplayEmail}) {
 
     const form = useRef();
 
@@ -25,6 +25,7 @@ function Email({displayEmail}) {
     return (
       <div>
          {displayEmail && <motion.div 
+          
           className='email bg-black rounded-3xl opacity-90'
           animate = {{
               x : -250,
@@ -39,16 +40,16 @@ function Email({displayEmail}) {
           transition = {{
               type : "spring"
           }}
+
          >
-             <form ref = {form} className='flex flex-col justify-around mt-12' onSubmit={(e) => sendEmail(e)}>
+             <form ref = {form} className='flex flex-col justify-around mt-4' onSubmit={(e) => sendEmail(e)}>
+                <img src="https://img.icons8.com/color/48/undefined/close-window.png" className='close-btn mb-4' onClick={() => toggleDisplayEmail(!displayEmail)}/>
+                 <label className='text-white text-2xl font-sans mb-8'>Get a DSA Question mailed to you everyday !</label>
                  <label className = "text-white self-center">Full Name : </label>
                  <input type = "text" className = "self-center w-2/3 h-8" placeholder='Enter you full name here...' name  = "name" />
                 <br/>
                  <label className = "text-white self-center">Email id : </label>
                  <input type = "email" className = "self-center w-2/3 h-8" placeholder='Enter you email here...' />
-                    <br/>
-                 <label className = "text-white self-center">Message : </label>
-                 <input className = "self-center w-2/3 h-32" type = "text" placeholder='Enter message here...' name = "message" />
                  <br/>
                  <button type = "submit" className='w-36 h-16 text-xl rounded-3xl text-white bg-fuchsia-500 self-center'>Send Email</button>
              </form>

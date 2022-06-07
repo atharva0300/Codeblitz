@@ -84,7 +84,7 @@ function App() {
             <Editor code  = {code} onSubmit = {SubmitCode} setCode = {setCode} placeholder = {placeholder} />
             <Output output = {output} outputPlaceholder = {outputPlaceholder} />
       </div>
-      <Email displayEmail = {displayEmail} />
+      <Email displayEmail = {displayEmail} toggleDisplayEmail = {toggleDisplayEmail} />
     </div>
   );
 }
