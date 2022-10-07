@@ -100,3 +100,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Future features 
+1. Introducing new languages : Javascript, Python, C++, Java
+2. Implementing threading 
+3. A new console window to display any types of errors.
+4. Allowing programs to be written and run on the terminal which is created on the webpage. This terminal will behave similar to our machine's terminal
+5. Implementing loader at backend
+6. Handling various types of Errors and sending appropriate error messages to the client
